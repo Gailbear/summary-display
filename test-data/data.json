@@ -1,0 +1,17 @@
+{
+  "current_event": "unplugged",
+  "games": [
+    { "title": "Game 1", "checkouts": 28 },
+    { "title": "Game 2", "checkouts": 20 },
+    { "title": "Game 3", "checkouts": 12 }
+  ],
+  "activity_level": "VERY_BUSY",
+  "stats": {
+    "titles": 963,
+    "active_checkouts": 21,
+    "checked_out": "89%",
+    "titles_played": 384,
+    "total_checkouts": 204,
+    "hours_played": 9064
+  }
+}

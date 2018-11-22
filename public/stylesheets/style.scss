@@ -1,0 +1,200 @@
+// unplugged splash colors
+$pup-bright: #cc56ca;
+$pup-main: #91479a;
+$pup-dark: #542959;
+$pup-darkest: #371b3b;
+
+$blackish: #333;
+
+body {
+  margin: 0;
+}
+
+@mixin event-theme($event-name, $bright, $main, $dark, $darkest) {
+  div[data-event="#{$event-name}"] {
+    .colorbar,
+    .stat-block .number {
+      background-color: $main;
+    }
+
+    .main .box {
+      li {
+        color: $darkest;
+      }
+      h3 {
+        background-color: $main;
+      }
+      .header-bar .dark {
+        fill: $darkest;
+      }
+    }
+
+    svg {
+      .color-bright {
+        fill: $bright !important;
+      }
+
+      .color-main {
+        fill: $main !important;
+      }
+
+      .color-dark {
+        fill: $dark !important;
+      }
+
+      .color-darkest {
+        fill: $darkest !important;
+      }
+    }
+  }
+}
+
+.colorbar {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  color: white;
+  position: relative;
+}
+
+.colorbar .title {
+  font-size: 3em;
+  font-family: "Share";
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: bottom left 0;
+  position: absolute;
+  bottom: 7.5em;
+  left: -0.225em;
+}
+
+.right {
+  float: right;
+  width: 25%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr 1fr/ 4em 1fr;
+}
+
+.main {
+  color: white;
+  background-color: $blackish;
+  height: 100%;
+  display: grid;
+  grid-template: 15% 1fr 1fr / 1fr 2fr;
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column: span 2;
+  font-family: "Share";
+  font-size: 3em;
+}
+
+.box {
+  background-color: white;
+}
+
+.main .box {
+  grid-column-start: 1;
+  margin: 5%;
+  font-family: "Share";
+  ul {
+    list-style: none;
+  }
+  li {
+    font-size: 2rem;
+    line-height: 50px;
+    height: 50px;
+    .box-image {
+      width: 50px;
+    }
+    .title {
+      padding-left: 5px;
+    }
+    .checkouts {
+      width: 50px;
+      text-align: center;
+      float: right;
+      margin-right: 5px;
+    }
+  }
+  h3 {
+    margin: 0px;
+    padding: 10px;
+    height: 2em;
+    letter-spacing: 0.2em;
+  }
+  .header-bar {
+    width: 100%;
+    height: 15px;
+    .tiny {
+      font-size: 11px;
+    }
+  }
+}
+svg {
+  .white {
+    fill: white;
+  }
+}
+
+.diamond {
+  margin: 10%;
+  grid-column-start: 2;
+  grid-row: span 2;
+  font-family: "Share";
+  .large {
+    font-size: 2.5em;
+  }
+  .small {
+    font-size: 1.25em;
+    letter-spacing: -0.05em;
+  }
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+.stats-content {
+  display: grid;
+  grid-template: 75px 1fr 1fr / repeat(3, 1fr);
+}
+
+.activity {
+  color: $blackish;
+  grid-column: span 3;
+  margin: 10px;
+  font-size: 1.5em;
+  line-height: 50px;
+  .activity-color {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.stat-block {
+  margin: 10px;
+  .number {
+    color: white;
+    font-size: 2em;
+    padding: 2px;
+  }
+  .desc {
+    background-color: $blackish;
+    color: white;
+    font-size: 11px;
+    height: 15px;
+    position: relative;
+    padding: 2px;
+  }
+}
+
+@include event-theme(
+  unplugged,
+  $pup-bright,
+  $pup-main,
+  $pup-dark,
+  $pup-darkest
+);
