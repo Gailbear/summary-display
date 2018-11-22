@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+// BAKE production
+process.env.NODE_ENV = "production";
+require("./www");

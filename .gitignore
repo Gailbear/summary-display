@@ -63,3 +63,6 @@ typings/
 # css
 *.css
 *.css.map
+
+# dist
+dist/

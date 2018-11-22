@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon -e 'scss,js,pug' ./bin/www"
+    "dev": "nodemon -e 'scss,js,pug' ./bin/www",
+    "scss": "node-sass public/stylesheets/style.scss public/stylesheets/style.css",
+    "pkg": "yarn scss && pkg --out-path dist/ ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -12,11 +14,21 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "node-sass-middleware": "0.11.0",
     "pug": "2.0.0-beta11",
     "underscore.string": "^3.3.5"
   },
   "devDependencies": {
-    "nodemon": "^1.18.6"
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^1.18.6",
+    "pkg": "^4.3.4"
+  },
+  "bin": "bin/bundle",
+  "pkg": {
+    "assets": [
+      "views/**/*",
+      "public/images/*",
+      "public/stylesheets/style.css",
+      "test-data/data.json"
+    ]
   }
 }
