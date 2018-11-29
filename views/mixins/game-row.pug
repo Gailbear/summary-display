@@ -1,0 +1,9 @@
+include ./status-circle.pug
+
+mixin game-row({title, image, checkouts, available}) 
+  li
+    span.box-image
+      img(src=image)
+    span.title= title
+    span.checkouts= checkouts
+      +status-circle(available ? "available" : "unavailable")

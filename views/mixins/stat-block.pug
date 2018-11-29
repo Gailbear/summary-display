@@ -1,0 +1,10 @@
+mixin stat-block(value, desc)
+  .stat-block
+    span.number= value
+    br
+    span.desc= desc
+
+mixin stat-blocks(map)
+  - const statkeys = Object.keys(map)
+  each key in statkeys
+    +stat-block(map[key], s(key).humanize().titleize().value())

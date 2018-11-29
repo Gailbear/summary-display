@@ -1,0 +1,18 @@
+include stat-block.pug
+
+mixin featured-game({title, image, description, available, checkouts, rating})
+  .featured-game(data-title=title)
+    .top
+      img(src=image)
+      .overlay= title.toUpperCase()
+    .bottom
+      .desc= description && description.toUpperCase()
+      .availability
+        if available
+          span.available AVAILABLE NOW
+        else
+          span.unavailable UNAVAILABLE
+          br
+          span.gray.small (CHECK BACK LATER)
+      +stat-blocks({checkouts, game_score: Math.round(+rating * 10)/10 + "/10"})
+        

@@ -1,9 +1,21 @@
 {
   "current_event": "unplugged",
   "games": [
-    { "title": "Game 1", "checkouts": 28 },
-    { "title": "Game 2", "checkouts": 20 },
-    { "title": "Game 3", "checkouts": 12 }
+    {
+      "title": "Charterstone",
+      "checkouts": 28,
+      "rating": 7.6,
+      "image": "images/games/charterstone.jpg",
+      "available": true
+    },
+    {
+      "title": "Azul",
+      "checkouts": 20,
+      "image": "images/games/azul.jpg",
+      "rating": 9,
+      "available": false
+    },
+    { "title": "Pyramid Arcade", "checkouts": 12, "available": true }
   ],
   "activity_level": "VERY_BUSY",
   "stats": {
